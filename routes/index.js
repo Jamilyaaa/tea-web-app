@@ -1,8 +1,6 @@
 const express = require('express');
-
 const router = express.Router();
-
-const { userChecker } = require('../');
+const { userChecker } = require('./middleWare/middlewares');
 
 
 router.get('/', (req, res, next) => {
