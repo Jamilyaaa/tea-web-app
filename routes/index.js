@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Tea Shop' });
+const router = express.Router();
+
+const { userChecker } = require('../');
+
+
+router.get('/', (req, res, next) => {
+  res.render('index', { title: 'Express' });
+});
+
+// userChecker либо пропустит (c помощью next()) в функцию, которая рендерит lk страницу, либо редиректнет на главную
+
+router.get('/', userChecker, (req, res) => {
+  res.render('lk');
 });
 
 module.exports = router;
