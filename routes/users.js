@@ -8,7 +8,6 @@ const { User } = require("../db/models");
 const {
   userChecker,
   deepCheckUser,
-  showBody,
 } = require("./middleWare/middlewares");
 
 router.get("/registration", (req, res) => {
