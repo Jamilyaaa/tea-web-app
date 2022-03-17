@@ -4,7 +4,7 @@ function init() {
     const myMap = new ymaps.Map('map', {
         center: [55.76, 37.64],
 
-        zoom: 2,
+        zoom: 7,
         controls: ['zoomControl'],
         behaviors: ['drag'],
     });
@@ -17,3 +17,4 @@ function init() {
         balloonContent: '<strong><a href=http://localhost:3000/tea/1 >Каркаде</strong>',
     })));
 }
+
