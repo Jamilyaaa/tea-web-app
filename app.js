@@ -10,6 +10,7 @@ const app = express();
 //adding routes
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const regRouter = require('./routes/reg');
 
 //Middleware setup
 // view engine setup
@@ -34,6 +35,7 @@ app.use(session({
 //routes middleware
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/registration', regRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
