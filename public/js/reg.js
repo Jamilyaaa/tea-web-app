@@ -14,8 +14,8 @@ regForm.addEventListener("submit", async (event) => {
       password: password.value,
     }),
   });
+  const data = await response.json();
   if (response.ok) {
-    const data = await response.json();
     window.location.href = `/users/lk/${data.id}`;
-  } else alert("awful");
+  } else alert(data.message);
 });
