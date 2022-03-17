@@ -7,7 +7,8 @@ const sha256 = require('sha256');
 const { User } = require('../db/models');
 const { userChecker, deepCheckUser, showBody } = require('./middleWare/middlewares');
 
-/* GET users listing. */
+
+
 router.get('/registration', (req, res) => {
   res.render('registration');
 });
@@ -53,6 +54,7 @@ router.get('/logout', (req, res) => {
   req.session.destroy();
   res.clearCookie('userCookie');
   res.redirect('/');
+
 });
 
 module.exports = router;
