@@ -3,7 +3,9 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const session = require('express-session')
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
+
 const logger = require('morgan');
 const app = express();
 
@@ -30,7 +32,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false },
-  name: 'tea_auth'
+  name: 'tea_auth',
+  store: new FileStore(), // хранилище для куков - папка с файлами
 }));
 
 //routes middleware
