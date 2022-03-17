@@ -1,5 +1,5 @@
 const helloUser = (req, res, next) => {
-    res.locals.login = req.session?.name; // если в сессии есть login то его записываем в res.locals.username чтобы все hbs его видели
+    res.locals.login = req.session?.login; // если в сессии есть login то его записываем в res.locals.username чтобы все hbs его видели
     next();
 };
 
@@ -9,7 +9,7 @@ const userChecker = (req, res, next) => {
     if (req.session.login) {
         return next();
     }
-    res.redirect('/');
+    res.redirect('/registration');
 }
 
 module.exports = { helloUser, userChecker };{}
