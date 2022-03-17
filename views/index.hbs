@@ -2,26 +2,8 @@
 <div style="text-align: center;">
 <h1 id="tittleId">{{title}}</h1>
 </div>
-<div id="maps" class="map" style="width: 600px; height: 600px"></div>
-<script src="https://api-maps.yandex.ru/2.1/?apikey=4ad82de8-71b2-4bb0-9bf3-e26f72976e6f&lang=ru_RU" type="text/javascript" defer></script>
-<script type="text/javascript">
-    // Функция ymaps.ready() будет вызвана, когда
-    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-    ymaps.ready(init);
-    function init(){
-        // Создание карты.
-        const myMap = new ymaps.Map("map", {
-            // Координаты центра карты.
-            // Порядок по умолчанию: «широта, долгота».
-            // Чтобы не определять координаты центра карты вручную,
-            // воспользуйтесь инструментом Определение координат.
-            center: [55.76, 37.64],
-            // Уровень масштабирования. Допустимые значения:
-            // от 0 (весь мир) до 19.
-            zoom: 7
-        });
-    }
-</script>
+<div id="map" class="map" style="width: 600px; height: 600px"></div>
+
 <h1>карта</h1>
 </div>
 

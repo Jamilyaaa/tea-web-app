@@ -11,9 +11,10 @@ const {
   showBody,
 } = require("./middleWare/middlewares");
 
-/* GET users listing. */
-router.get("/registration", (req, res) => {
-  res.render("registration");
+
+router.get('/registration', (req, res) => {
+  res.render('registration');
+
 });
 
 router.post("/registration", async (req, res) => {
@@ -63,8 +64,11 @@ router.get("/lk/:id", userChecker, deepCheckUser, async (req, res) => {
 router.get("/logout", (req, res) => {
   // при logout сессия удаляется из папки sessions
   req.session.destroy();
-  res.clearCookie("userCookie");
-  res.redirect("/");
+
+  res.clearCookie('userCookie');
+  res.redirect('/');
+
+
 });
 
 module.exports = router;
