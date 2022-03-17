@@ -1,37 +1,19 @@
+ymaps.ready(init);
 
+function init() {
+    const myMap = new ymaps.Map('map', {
+        center: [55.76, 37.64],
 
-
-  ymaps.ready(init);
-  function init(){
-      var myMap = new ymaps.Map("map", {
-          center: [55.76, 37.64],
-          zoom: 7
-      });
-  }
-
-
-        // {
-        //     searchControlProvider: 'yandex#search'
-//         }),
-//         objectManager = new ymaps.ObjectManager({
-//             // Чтобы метки начали кластеризоваться, выставляем опцию.
-//             clusterize: true,
-//             // ObjectManager принимает те же опции, что и кластеризатор.
-//             gridSize: 32,
-//             clusterDisableClickZoom: true
-//         });
-//
-//     // Чтобы задать опции одиночным объектам и кластерам,
-//     // обратимся к дочерним коллекциям ObjectManager.
-//     objectManager.objects.options.set('preset', 'islands#greenDotIcon');
-//     objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
-//     myMap.geoObjects.add(objectManager);
-//
-//     $.ajax({
-//         url: "data_map.json"
-//     }).done(function(data) {
-//         objectManager.add(data);
-//     });
-//
-// }
-
+        zoom: 7,
+        controls: ['zoomControl'],
+        behaviors: ['drag'],
+    });
+    const myPlacemark = new ymaps.Placemark([55.8, 37.6], {
+        hintContent: 'Hint',
+        balloonContent: 'Ballon',
+    });
+    myMap.geoObjects.add(myPlacemark);
+    myMap.geoObjects.add((new ymaps.Placemark([56.833436, 35.715175], {
+        balloonContent: '<strong><a href=http://localhost:3000/tea/1 >Каркаде</strong>',
+    })));
+}
