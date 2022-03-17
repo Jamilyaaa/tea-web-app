@@ -1,15 +1,39 @@
 const helloUser = (req, res, next) => {
-    res.locals.login = req.session?.name; // если в сессии есть login то его записываем в res.locals.username чтобы все hbs его видели
+    res.locals.login = req.session?.login; // если в сессии есть login то его записываем в res.locals.username чтобы все hbs его видели
     next();
 };
 
 // пропускает пользователя, если он авторизован (т.е если есть ключ name в сессии) или редиректит на главную, если он
 //авторизован (т.е если есть ключ name в сессии) или редиректит на главную, если он не авторизован (см стр 11 в index.js роутере )
 const userChecker = (req, res, next) => {
-    if (req.session.login) {
-        return next();
+    if (req.session.userLogin) { // проверяем есть ли в сессии userName (см в reg.js router)
+        return next(); 
     }
-    res.redirect('/');
+    res.redirect('users/login');
 }
+const deepCheckUser = (req, res, next) => {
+  if (Number(req.session.userId) === Number(req.params.id)) { // сравниваем id юзера и id профиля на который он хочет попасть
+    next();
+  } else {
+    res.redirect(`/users/lk/${req.session.userId}`); // редиректим юзера всегда на свой профиль при попытке перейти на чужой
+  }
+};
 
-module.exports = { helloUser, userChecker };{}
+const addToLocals = (req, res, next) => {
+  // записываем в locals данные из сессии чтобы они были доступны в hbs
+  res.locals.userId = req.session?.userId;
+  // строка 31 это optional channing делает она тоже самое
+  // тоже, что и строка 34 - 36 это синтаксически тоже самое
+  if (req.session) {
+    res.locals.userLogin = req.session.userLogin;
+  }
+  next();
+};
+
+const showBody = (req, res, next) => {
+  console.log(req.body);
+  next();
+};
+
+
+module.exports = { helloUser, userChecker,deepCheckUser,addToLocals, showBody };

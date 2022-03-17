@@ -1,0 +1,23 @@
+
+<center>
+<h1 id="adminLkTittle">{{userLogin}}</h1>
+
+
+</center>
+
+<div class="container">
+<div id="teaSorts">
+  {{#each}}
+  <li class="list-group-item list-group-item-info">A simple info list group item</li>
+{{/each}}
+</div>
+<div id="usersList">
+  <h3>Список пользователей</h3>
+    {{#each entries}}
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success">{{login}}</li><input type="checkbox" name="ban_unBan" id="ban_unBan">
+    {{/each}}
+</ul>
+</div>
+  </div>
+</div>
