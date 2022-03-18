@@ -5,16 +5,20 @@
 <div class="container">
 <div id="teaSorts">
   {{!-- {{#each body_text}} --}}
-  <li class="list-group-item list-group-item-info">A simple info list group item</li>
+  <li class="list-group-item list-group-item-info">Сорта чая</li>
 {{!-- {{/each}} --}}
 </div>
 <div id="usersList">
-  <h3>Список пользователей</h3>
+  <form id='ban' name="ban">
+
+  
     {{!-- {{#each user}} --}}
 <ul class="list-group">
-  <li class="list-group-item list-group-item-success">{{user}}</li><input type="checkbox" name="ban_unBan" id="ban_unBan">
+  <li class="list-group-item list-group-item-success"  >{{user}}<input type="checkbox" name="ban_unBan" id="ban_unBan"></li>
+    <button type="submit">Забанить</button>
     {{!-- {{/each}} --}}
 </ul>
+</form>
 </div>
   </div>
 </div>

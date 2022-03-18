@@ -103,13 +103,39 @@ a {
   outline: none;
 }
 #addB {
-  background-color: rgb(51, 204, 82);
+  background-color: rgb(9, 211, 218);
   border: 1px solid rgb(16, 132, 185); 
   color: #062c29;
   border-radius: 5px;
-  padding: 15px 20px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 11px;
+  font-size: 16px;
+}
+#usersList {
+  border: 5px solid ;
+  border-image: linear-gradient(#1e6d60 , #197069);
+  border-image: linear-gradient(#0fdaa7 , #10eedb);
+  border-image: linear-gradient(#71bee2 , #1f6a74);
+  border-image-slice: 1;
+
+  overflow: auto;
+  background: linear-gradient(rgb(45, 182, 109, 0.4)50%,rgb(107, 163, 90));
+  width: 800px;
+  height: 300px;
+}
+
+#teaSorts {
+  margin-bottom: 30px;
+  width: 800px;
+  height: 300px;
+  border: 5px solid;
+  background: linear-gradient(rgb(45, 182, 109, 0.1)50%,rgb(107, 163, 90));
+  border-image: linear-gradient(#1e6d60 , #197069);
+  border-image: linear-gradient(#0fdaa7 , #10eedb);
+  border-image: linear-gradient(#71bee2 , #1f6a74);
+  overflow: auto;
+  border-image-slice: 1;
+
 }
