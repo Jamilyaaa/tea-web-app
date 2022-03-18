@@ -71,19 +71,17 @@ a {
 }
 
 #lkComments {
-
-  margin-top:30px;
-  opacity: 0.6;
+  opacity: 1;
   border: 5px solid ;
   border-image: linear-gradient(#1e6d60 , #197069);
   border-image: linear-gradient(#0fdaa7 , #10eedb);
   border-image: linear-gradient(#71bee2 , #1f6a74);
   border-image-slice: 1;
-  
+  margin-top: 30px;
 
   
   overflow: auto;
-  background: linear-gradient(rgb(45, 182, 109. 0,4)50%,rgb(107, 163, 90));
+  background: linear-gradient(rgb(45, 182, 109, 0.4)50%,rgb(107, 163, 90));
   width: 800px;
   height: 400px;
 }
@@ -91,4 +89,27 @@ a {
   margin-top: 30px;
   font-size: 36px;
   color: #062c29;
+}
+#commentInp {
+  margin-top: 10px;
+  background-color: rgb(24, 165, 43, 0.4);
+  width: 500px;
+  height: 100px;
+
+}
+
+#commentInp:focus {
+  background-color: rgb(155, 245, 245);
+  outline: none;
+}
+#addB {
+  background-color: rgb(51, 204, 82);
+  border: 1px solid rgb(16, 132, 185); 
+  color: #062c29;
+  border-radius: 5px;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 11px;
 }
