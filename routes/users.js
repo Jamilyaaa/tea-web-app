@@ -78,7 +78,6 @@ router.get("/lk/:id", userChecker, deepCheckUser, async (req, res) => {
 router.get("/logout", (req, res) => {
   // при logout сессия удаляется из папки sessions
   req.session.destroy();
-
   res.clearCookie("tea_auth");
   res.redirect("/");
 });
