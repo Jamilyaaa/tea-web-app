@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       role: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       login: {
         type: Sequelize.STRING
