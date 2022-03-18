@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const { userChecker } = require('./middleWare/middlewares');
+const { Tea } = require('../db/models')
+
 
 
 router.get('/', (req, res, next) => {
@@ -13,4 +15,8 @@ router.get('/', userChecker, (req, res) => {
   res.render('lk');
 });
 
+router.get('/all', async (req, res) =>{
+  const data  = await Tea.findAll({});
+  res.json(data);
+})
 module.exports = router;
