@@ -72,7 +72,9 @@ router.post("/login", async (req, res) => {
 router.get("/lk/:id", userChecker, deepCheckUser, async (req, res) => {
   // проходим мидлверы и попадаем в профиль
   const user = await User.findByPk(req.params.id);
+  if (!user.role) {
   res.render("lk", { user: user.login });
+  } else res.render("adminLk", { user: user.login });
 });
 
 router.get("/logout", (req, res) => {
