@@ -14,6 +14,7 @@ const app = express();
 //adding routes
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const teasRouter = require('./routes/tea');
 
 //Middleware setup
 // view engine setup
@@ -30,7 +31,7 @@ app.use(cookieParser());
 app.use(session({
   secret: process.env.SECRET ?? 'dsklfjghsldfhglsdufhglkjs',
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: { secure: false },
   name: 'tea_auth',
   store: new FileStore(), // хранилище для куков - папка с файлами
@@ -39,6 +40,7 @@ app.use(session({
 //routes middleware
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/tea', teasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
