@@ -16,7 +16,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-       {{#unless login}}
+       {{#unless user}}
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/users/login">Вход</a>
         </li>
@@ -24,7 +24,7 @@
           <a class="nav-link" href="/users/registration">Регистрация</a>
         </li>
         {{/unless}}
-       {{#if login}}
+       {{#if user}}
                 <li class="nav-item">
           <a class="nav-link" href="/users/lk">Личный кабинет</a>
         </li>

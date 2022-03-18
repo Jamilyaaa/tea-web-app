@@ -80,7 +80,7 @@ router.get("/logout", (req, res) => {
   // при logout сессия удаляется из папки sessions
   req.session.destroy();
 
-  res.clearCookie("userCookie");
+  res.clearCookie("tea_auth");
   res.redirect("/");
 });
 
