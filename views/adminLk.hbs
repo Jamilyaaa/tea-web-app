@@ -1,23 +1,30 @@
 
 <center>
-<h1 id="adminLkTittle">{{userLogin}}</h1>
-
-
-</center>
+<h1 id="adminLkTittle">{{user}}</h1>
 
 <div class="container">
 <div id="teaSorts">
-  {{#each}}
+  {{#each body_text}}
   <li class="list-group-item list-group-item-info">A simple info list group item</li>
 {{/each}}
 </div>
 <div id="usersList">
   <h3>Список пользователей</h3>
-    {{#each entries}}
+    {{#each user}}
 <ul class="list-group">
-  <li class="list-group-item list-group-item-success">{{login}}</li><input type="checkbox" name="ban_unBan" id="ban_unBan">
+  <li class="list-group-item list-group-item-success">{{user}}</li><input type="checkbox" name="ban_unBan" id="ban_unBan">
     {{/each}}
 </ul>
 </div>
   </div>
 </div>
+
+
+
+
+
+
+
+</center>
+
+

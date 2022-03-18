@@ -39,4 +39,56 @@ a {
   width: 300px;
 }
 
+#comments {
+  opacity: 1;
+  border: 5px solid ;
+  border-image: linear-gradient(#1e6d60 , #197069);
+  border-image: linear-gradient(#0fdaa7 , #10eedb);
+  border-image: linear-gradient(#71bee2 , #1f6a74);
+  border-image-slice: 1;
+  margin-top: 30px;
 
+  
+  overflow: auto;
+  background: linear-gradient(rgb(45, 182, 109, 0.4)50%,rgb(107, 163, 90));
+  width: 800px;
+  height: 400px;
+}
+#textComment {
+  color: black;
+  
+}
+
+#userList {
+  opacity: 0.6;
+  border: 5px solid ;
+  overflow: auto;
+  width: 800px;
+  height: 400px;
+}
+.card {
+  margin-top: 20px;
+}
+
+#lkComments {
+
+  margin-top:30px;
+  opacity: 0.6;
+  border: 5px solid ;
+  border-image: linear-gradient(#1e6d60 , #197069);
+  border-image: linear-gradient(#0fdaa7 , #10eedb);
+  border-image: linear-gradient(#71bee2 , #1f6a74);
+  border-image-slice: 1;
+  
+
+  
+  overflow: auto;
+  background: linear-gradient(rgb(45, 182, 109. 0,4)50%,rgb(107, 163, 90));
+  width: 800px;
+  height: 400px;
+}
+#lkTittle {
+  margin-top: 30px;
+  font-size: 36px;
+  color: #062c29;
+}
