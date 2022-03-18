@@ -14,6 +14,7 @@ logginForm.addEventListener("submit", async (event) => {
     }),
   });
   const data = await response.json();
+  
   if (response.ok) {
     window.location.href = `/users/lk/${data.id}`;
   } else alert(data.message);
