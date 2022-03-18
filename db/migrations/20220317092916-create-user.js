@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       role: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       login: {
         type: Sequelize.STRING
@@ -18,7 +18,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       isBanned: {
         type: Sequelize.BOOLEAN

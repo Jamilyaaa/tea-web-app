@@ -1,23 +1,33 @@
 
 <center>
-<h1 id="adminLkTittle">{{userLogin}}</h1>
+<h1 id="adminLkTittle">{{login}}</h1>
+
+<div class="container">
+<div id="teaSorts">
+  <li class="list-group-item list-group-item-info">Список комментов</li>
+
+</div>
+<div id="usersList">
+  <form  name="ban">
+
+    {{#each allusers}}
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success"  >{{this.login}}<input type="checkbox" name="ban_unBan" id="ban_unBan"></li>
+    <button type="submit" id="ban">Забанить</button>
+    {{/each}}
+</ul>
+
+</form>
+</div>
+  </div>
+</div>
+
+
+
+
+
 
 
 </center>
 
-<div class="container">
-<div id="teaSorts">
-  {{#each}}
-  <li class="list-group-item list-group-item-info">A simple info list group item</li>
-{{/each}}
-</div>
-<div id="usersList">
-  <h3>Список пользователей</h3>
-    {{#each entries}}
-<ul class="list-group">
-  <li class="list-group-item list-group-item-success">{{login}}</li><input type="checkbox" name="ban_unBan" id="ban_unBan">
-    {{/each}}
-</ul>
-</div>
-  </div>
-</div>
+

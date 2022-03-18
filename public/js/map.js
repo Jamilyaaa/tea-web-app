@@ -1,20 +1,31 @@
-ymaps.ready(init);
+// //get data from db
+const getLocation = async () => {
+    const response = await fetch('/all');
+    const data = await response.json();
+    return [...data]
+}
 
-function init() {
+//Map generate
+async function init() {
     const myMap = new ymaps.Map('map', {
-        center: [55.76, 37.64],
-
-        zoom: 7,
+        center: [55.8, 37.6],
+        zoom: 2,
         controls: ['zoomControl'],
         behaviors: ['drag'],
     });
-    const myPlacemark = new ymaps.Placemark([55.8, 37.6], {
-        hintContent: 'Hint',
-        balloonContent: 'Ballon',
+
+    (await getLocation()).forEach((el)=>{
+        console.log(el.location);
+        myMap.geoObjects.add(new ymaps.Placemark(
+            el.location,
+            {
+            hintContent: el.tea_name,
+            balloonContent: el.description + `<a href="/tea/${el.id}">MORE</a>`
+        }
+        ))
     });
-    myMap.geoObjects.add(myPlacemark);
-    myMap.geoObjects.add((new ymaps.Placemark([56.833436, 35.715175], {
-        balloonContent: '<strong><a href=http://localhost:3000/tea/1 >Каркаде</strong>',
-    })));
 }
+ymaps.ready(init); // Map initiate
+
+
 
