@@ -75,7 +75,11 @@ router.get("/lk/:id", userChecker, deepCheckUser, async (req, res) => {
   
   if (!user.role) {
   res.render("lk", { user: user.login });
-  } else res.render("adminLk", { user: user.login });
+  } else {
+    const allusers = await User.findAll({raw: true});
+    console.log(allusers);
+    res.render("adminLk", { login: user.login, allusers});
+  }
 });
 
 router.get("/logout", (req, res) => {
