@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Tea.init({
     tea_name: DataTypes.STRING,
-    location: DataTypes.STRING,
+    location: DataTypes.INTEGER,
     img: DataTypes.TEXT,
     description: DataTypes.TEXT
   }, {

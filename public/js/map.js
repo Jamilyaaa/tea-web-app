@@ -15,11 +15,12 @@ async function init() {
     });
 
     (await getLocation()).forEach((el)=>{
+        console.log(el.location);
         myMap.geoObjects.add(new ymaps.Placemark(
             el.location,
             {
             hintContent: el.tea_name,
-            balloonContent: el.description
+            balloonContent: el.description + `<a href="/tea/${el.id}">MORE</a>`
         }
         ))
     });
