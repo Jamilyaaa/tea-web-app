@@ -18,7 +18,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       isBanned: {
         type: Sequelize.BOOLEAN

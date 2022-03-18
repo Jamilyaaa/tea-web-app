@@ -60,7 +60,7 @@ router.post("/login", async (req, res) => {
       req.session.userEmail = user.email;
       req.session.userId = user.id;
       res.json({ id: user.id });
-      res.redirect(`/users/lk/${user.id}`);
+      // res.redirect(`/users/lk/${user.id}`);
     } else {
       res.send("wrong password");
     }
@@ -72,7 +72,7 @@ router.post("/login", async (req, res) => {
 router.get("/lk/:id", userChecker, deepCheckUser, async (req, res) => {
   // проходим мидлверы и попадаем в профиль
   const user = await User.findByPk(req.params.id);
-  res.render("lk", { user });
+  res.render("lk", { user: user.login });
 });
 
 router.get("/logout", (req, res) => {
