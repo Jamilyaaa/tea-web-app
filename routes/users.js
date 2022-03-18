@@ -8,7 +8,6 @@ const { User } = require("../db/models");
 const {
   userChecker,
   deepCheckUser,
-  showBody,
 } = require("./middleWare/middlewares");
 
 router.get("/registration", (req, res) => {
@@ -61,7 +60,7 @@ router.post("/login", async (req, res) => {
       req.session.userEmail = user.email;
       req.session.userId = user.id;
       res.json({ id: user.id });
-      // res.redirect(`/lk/${user.id}`);
+      // res.redirect(`/users/lk/${user.id}`);
     } else {
       res.send("wrong password");
     }
