@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { userChecker } = require('./middleWare/middlewares');
-const { Tea } = require('../db/models')
+const { Tea, User } = require('../db/models')
 
 
 
@@ -17,6 +17,11 @@ router.get('/', userChecker, (req, res) => {
 
 router.get('/all', async (req, res) => {
   const data  = await Tea.findAll({});
+  res.json(data);
+})
+
+router.get('/allusers', async (req, res) => {
+  const data  = await User.findAll({});
   res.json(data);
 })
 module.exports = router;
