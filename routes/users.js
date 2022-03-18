@@ -1,10 +1,12 @@
 const express = require("express");
+const { user } = require("pg/lib/defaults");
 
 const router = express.Router();
 
 const sha256 = require("sha256");
 
-const { User } = require("../db/models");
+const { User, Comment } = require("../db/models");
+
 const {
   userChecker,
   deepCheckUser,
@@ -72,7 +74,6 @@ router.post("/login", async (req, res) => {
 router.get("/lk/:id", userChecker, deepCheckUser, async (req, res) => {
   // проходим мидлверы и попадаем в профиль
   const user = await User.findByPk(req.params.id);
-  
   if (!user.role) {
   res.render("lk", { user: user.login });
   } else res.render("adminLk", { user: user.login });
@@ -83,6 +84,21 @@ router.get("/logout", (req, res) => {
   req.session.destroy();
   res.clearCookie("tea_auth");
   res.redirect("/");
+});
+
+//add comments
+router.post("/tea/:id", async (req,res)=>{
+  const { body_text} = req.body;
+  try { 
+    const comm = await Comment.create({
+    user_id: req.session.userLogin,
+    body_text,
+    tea_id:
+  });
+  res.send({body_text})
+  } catch (error) {
+    res.status(400).json({ message: "ooops" });
+  }
 });
 
 module.exports = router;
