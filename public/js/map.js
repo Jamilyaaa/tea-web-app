@@ -1,20 +1,9 @@
 // //get data from db
-console.log('!!!')
-
 const getLocation = async () => {
     const response = await fetch('/all');
     const data = await response.json();
     return [...data]
 }
-
-
-//Задаем дополнительный массив куда будем складывать созданные метки
-// let placemarks = [];
-// for (let i = 0; i < getLocation().length; i++) {
-//     placemarks.push(getLocation()[i].location)
-// }
-// console.log(placemarks);
-//
 
 //Map generate
 async function init() {
@@ -34,8 +23,6 @@ async function init() {
         }
         ))
     });
-
-
 }
 ymaps.ready(init); // Map initiate
 
