@@ -8,14 +8,13 @@ const getLocation = async () => {
 //Map generate
 async function init() {
     const myMap = new ymaps.Map('map', {
-        center: [55.8, 37.6],
-        zoom: 2,
+        center: [15.8, 25.6],
+        zoom: 4,
         controls: ['zoomControl'],
         behaviors: ['drag'],
     });
 
     (await getLocation()).forEach((el)=>{
-        console.log(el.location);
         myMap.geoObjects.add(new ymaps.Placemark(
             el.location,
             {
