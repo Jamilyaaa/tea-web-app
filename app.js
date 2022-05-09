@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
 
-// вынести в отдельный файл
+// вынести в отдельный фай
 app.use(session({
   secret: process.env.SECRET ?? 'dsklfjghsldfhglsdufhglkjs',
   resave: false,
